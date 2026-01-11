@@ -6,11 +6,11 @@ _This project has been created as part of the 42 curriculum by hamzarochd and Ya
 
 ## Description
 
-**CUB3D** is a 3D graphical representation project inspired by the classic Wolfenstein 3D game. This project implements a raycasting engine from scratch using the C programming language and the MLX42 graphics library.
+**CUB3D** is a 3D graphical representation project inspired by the classic Wolfenstein 3D game.  This project implements a raycasting engine from scratch using the C programming language and the MLX42 graphics library.
 
 ### Goal
 
-The primary objective of this project is to create a realistic 3D graphical representation of a maze from a first-person perspective using ray-casting principles. The project demonstrates: 
+The primary objective of this project is to create a realistic 3D graphical representation of a maze from a first-person perspective using ray-casting principles. The project demonstrates:  
 
 - Understanding of raycasting algorithms
 - Efficient graphics rendering techniques
@@ -39,7 +39,7 @@ The primary objective of this project is to create a realistic 3D graphical repr
 
 ## Dependencies
 
-This project requires the following dependencies:
+This project requires the following dependencies: 
 
 ### Core Dependencies
 
@@ -123,7 +123,7 @@ brew install cmake
 xcode-select --install
 ```
 
-**Note for macOS users:** Ensure you have Xcode Command Line Tools installed.  OpenGL comes pre-installed with macOS. 
+**Note for macOS users:** Ensure you have Xcode Command Line Tools installed.  OpenGL comes pre-installed with macOS.
 
 ### MLX42 Library
 
@@ -139,7 +139,7 @@ The **MLX42** library is already included in this repository as a static library
 
 ### Verifying Installation
 
-After installing dependencies, verify they are correctly installed: 
+After installing dependencies, verify they are correctly installed:
 
 ```bash
 # Check GCC
@@ -164,7 +164,7 @@ To compile the **mandatory** part:
 make
 ```
 
-To compile the **bonus** part:
+To compile the **bonus** part: 
 ```bash
 make bonus
 ```
@@ -179,27 +179,25 @@ To clean everything (object files and executables):
 make fclean
 ```
 
-To recompile: 
+To recompile:
 ```bash
 make re
 ```
 
 ### Compilation Flags
 
-The project uses the following optimization and security flags:
+The project uses the following optimization flags for maximum performance:
 
 ```makefile
--funroll-loops          # Loop optimization
--O3                     # Maximum optimization
--ffast-math            # Fast math operations
--mavx2                 # AVX2 CPU instructions
--flto                  # Link-time optimization
 -Wall -Wextra -Werror  # All warnings as errors
--fsanitize=address     # Memory leak detection
--g                     # Debug symbols
+-funroll-loops         # Loop optimization
+-O3                    # Maximum optimization
+-ffast-math           # Fast math operations
+-mavx2                # AVX2 CPU instructions
+-flto                 # Link-time optimization
 ```
 
-**Note:** If you encounter compilation issues, you can remove `-fsanitize=address` from the Makefile.
+**Note:** If you want to debug memory issues, you can add `-fsanitize=address -g` to the CFLAGS in the Makefile.
 
 ### Execution
 
@@ -244,7 +242,6 @@ C [R,G,B]  (Ceiling color)
 
 **Example maps are provided in:**
 - `good/` - Valid map examples
-- `bad/` - Invalid map examples (for testing error handling)
 
 ### Controls
 
@@ -275,12 +272,12 @@ CUB3D_RaycastingEngine/
 ├── mandatory/          # Mandatory part source files
 │   ├── cub3d.h        # Main header file
 │   ├── main.c         # Entry point
-│   ├── parsing*. c     # Map and config parsing
+│   ├── parsing*.c     # Map and config parsing
 │   ├── raycasting*.c  # Raycasting algorithms
 │   ├── render. c       # Rendering engine
 │   ├── hooks_setter.c # Event handlers
 │   ├── collisions.c   # Collision detection
-│   └── ...             # Other source files
+│   └── ...            # Other source files
 ├── bonus/             # Bonus part source files
 │   ├── cub3d_bonus.h  # Bonus header file
 │   ├── minimap_bonus.c # Minimap rendering
@@ -289,7 +286,6 @@ CUB3D_RaycastingEngine/
 │   └── ...            # Other bonus features
 ├── textures/          # Wall texture files (. xpm, .png)
 ├── good/              # Valid test maps
-├── bad/               # Invalid test maps
 ├── Makefile           # Build configuration
 ├── MLX42.h            # MLX42 library header
 ├── libmlx42.a         # MLX42 static library
@@ -319,13 +315,13 @@ sudo apt-get install xorg-dev
 ```
 
 **4.  Slow performance**
-- Remove `-fsanitize=address` from CFLAGS in Makefile
 - Ensure your graphics drivers are up to date
+- Try running on a system with better GPU support
 
 **5. Segmentation fault**
 - Check your map file format
 - Ensure all textures exist in the specified paths
-- Run with address sanitizer enabled for debugging
+- Add `-fsanitize=address -g` to CFLAGS in Makefile for debugging
 
 ## Resources
 
@@ -337,13 +333,11 @@ To learn more about raycasting and the concepts used in this project:
 - [MLX42 Documentation](https://github.com/codam-coding-college/MLX42)
 - [GLFW Documentation](https://www.glfw.org/documentation.html)
 
-## Author
+## Authors
 
-**hamzarochd** - [GitHub Profile](https://github.com/hamzarochd)
+- **hamzarochd** - [GitHub Profile](https://github.com/hamzarochd)
+- **Yahya Mouiguina** - [GitHub Profile](https://github.com/yahya-mouiguina)
 
----
-
-_Project completed as part of the 42 School curriculum._
 ---
 
 _Project completed as part of the 42 School curriculum._
